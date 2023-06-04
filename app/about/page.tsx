@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import {
   MediumIcon,
@@ -11,89 +12,130 @@ export const metadata: Metadata = {
   description: "Bitcoin mining venture",
 };
 
+type TeamMemberProps = {
+  image: string;
+  imageAlt: string;
+  name: string;
+  shortBio: string;
+  bio: string;
+  bioTwo?: string;
+  twitter: string;
+  medium?: string;
+};
+
+const TeamMember = ({
+  image,
+  imageAlt,
+  name,
+  shortBio,
+  bio,
+  bioTwo,
+  twitter,
+  medium,
+}: TeamMemberProps) => (
+  <>
+    <div className="flex flex-col md:flex-row md:items-center">
+      <div className="mb-4 md:flex-1 overflow-hidden mr-8 min-w-[150px]">
+        <Image
+          className="rounded-full"
+          src={image}
+          alt={imageAlt}
+          height="150"
+          width="150"
+          priority
+        />
+      </div>
+      <div className="flex flex-col flex-2 whitespace-pre-line">
+        <h2 className="my-2">{name}</h2>
+        <p className="leading-snug">{shortBio}</p>
+      </div>
+    </div>
+    <p className="">{bio}</p>
+    {bioTwo && <p className="mb-8">{bioTwo}</p>}
+    <div className="flex flex-col mb-12 gap-2 md:flex-row md:gap-2">
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+        href={twitter}
+        className="flex w-full border border-neutral-200 dark:border-neutral-800 rounded-lg p-4 no-underline items-center text-neutral-800 dark:text-neutral-200 hover:dark:bg-neutral-900 hover:bg-neutral-100 transition-all justify-between md:max-w-[50%]"
+      >
+        <div className="flex items-center">
+          <TwitterIcon />
+          <div className="ml-3">Twitter</div>
+        </div>
+        <ArrowIcon />
+      </a>
+      {medium && (
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href={medium}
+          className="flex w-full border border-neutral-200 dark:border-neutral-800 rounded-lg p-4 no-underline items-center text-neutral-800 dark:text-neutral-200 hover:dark:bg-neutral-900 hover:bg-neutral-100 transition-all justify-between"
+        >
+          <div className="flex items-center">
+            <MediumIcon />
+            <div className="ml-3">Medium</div>
+          </div>
+          <ArrowIcon />
+        </a>
+      )}
+    </div>
+  </>
+);
+
 export default function AboutPage() {
   return (
-    <section>
+    <section className="max-w-[512px]">
       <h1 className="font-bold text-3xl font-serif">About</h1>
-      <p className="my-5 text-neutral-800 dark:text-neutral-200">
-        Coming Soon.
-      </p>
-      {/* <div className="prose prose-neutral dark:prose-invert text-neutral-800 dark:text-neutral-200">
+      <div className="prose prose-neutral dark:prose-invert text-neutral-800 dark:text-neutral-200">
         <p>
-          I'm currently the <b>VP of Developer Experience at Vercel</b>, where I
-          lead our Developer Relations and Documentation teams. I focus on{" "}
-          <b>educating and growing</b> the Vercel and Next.js communities.
+          Sound Money Mining is a Bitcoin mining venture. It was started in June
+          2023 to serve 2 major purposes:
+        </p>
+        <ul>
+          <li>
+            Create an entry point for long term investments into Bitcoin and
+            Bitcoin mining.
+          </li>
+          <li>
+            Increase the sum total knowledge, education, and information about
+            Bitcoin and the benefits of sound money for the world.
+          </li>
+        </ul>
+        <p>
+          As the next block time clock ticks ever forward, we will continue to
+          do our part to contribute to these above purposes now and into the
+          future.
         </p>
         <hr />
-        <h2>Lucas Bazemore</h2>
-        <p>
-          I'm passionate about many creative pursuits, including music,
-          photography, videography, and of course, coding. This combination of
-          interests is what ultimately led me to my current role in building
-          developer communities.
+        <h1 className="font-bold text-3xl font-serif">The Team</h1>
+        <p className="mb-12">
+          With over 10 combined years of exposure, education, and involvement in
+          the Bitcoin world, we are excited about Bitcoin and the future. If you
+          have any questions, do not hesitate to reach out to us!{" "}
         </p>
-        <div className="flex flex-col gap-2 md:flex-row md:gap-2">
-          <a
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://twitter.com/soundmoneybtc"
-            className="flex w-full border border-neutral-200 dark:border-neutral-800 rounded-lg p-4 no-underline items-center text-neutral-800 dark:text-neutral-200 hover:dark:bg-neutral-900 hover:bg-neutral-100 transition-all justify-between"
-          >
-            <div className="flex items-center">
-              <TwitterIcon />
-              <div className="ml-3">Twitter</div>
-            </div>
-            <ArrowIcon />
-          </a>
-          <a
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://medium.com/@soundmoneymining"
-            className="flex w-full border border-neutral-200 dark:border-neutral-800 rounded-lg p-4 no-underline items-center text-neutral-800 dark:text-neutral-200 hover:dark:bg-neutral-900 hover:bg-neutral-100 transition-all justify-between"
-          >
-            <div className="flex items-center">
-              <MediumIcon />
-              <div className="ml-3">Medium</div>
-            </div>
-            <ArrowIcon />
-          </a>
-        </div>
-        <hr />
-        <h2>Roberto Gargurevich</h2>
-        <p className="mb-8">
-          Outside of Vercel, I <b>angel invest</b> in developer tools companies
-          and <b>advise early-stage startups</b>. I also do Developer Relations
-          consulting work, helping companies take their DevRel function from 0
-          to 1, or provide guidance on growing communities, content creation,
-          and developer marketing.
-        </p>
-        <div className="flex flex-col gap-2 md:flex-row md:gap-2">
-          <a
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://twitter.com/soundmoneybtc"
-            className="flex w-full border border-neutral-200 dark:border-neutral-800 rounded-lg p-4 no-underline items-center text-neutral-800 dark:text-neutral-200 hover:dark:bg-neutral-900 hover:bg-neutral-100 transition-all justify-between"
-          >
-            <div className="flex items-center">
-              <TwitterIcon />
-              <div className="ml-3">Twitter</div>
-            </div>
-            <ArrowIcon />
-          </a>
-          <a
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://medium.com/@soundmoneymining"
-            className="flex w-full border border-neutral-200 dark:border-neutral-800 rounded-lg p-4 no-underline items-center text-neutral-800 dark:text-neutral-200 hover:dark:bg-neutral-900 hover:bg-neutral-100 transition-all justify-between"
-          >
-            <div className="flex items-center">
-              <MediumIcon />
-              <div className="ml-3">Medium</div>
-            </div>
-            <ArrowIcon />
-          </a>
-        </div>
-      </div> */}
+        <TeamMember
+          key="roberto"
+          image="/images/team/roberto-bw-sketch-twitter-lazer-eyes.jpeg"
+          imageAlt="Roberto Lazer Eyes"
+          name="Roberto Gargurevich"
+          shortBio="First principles thinker and analytics junkie."
+          bio="I believe that understanding how a company's cross functional processes all come together is a key factor to successfully drawing insights from data and ultimately drive better business decisions. "
+          bioTwo="I've been with EXSIF Worldwide a Berkshire Hathaway company for over 6 years and I'm currently a Senior Analyst of Strategy and Business Intelligence."
+          twitter="https://twitter.com/gargu_R"
+        />
+        <TeamMember
+          key="roberto"
+          image="/images/team/lucas-lazer-eyes.jpeg"
+          imageAlt="Lucas Lazer Eyes"
+          name="Lucas Bazemore"
+          shortBio="If ruthless prioritization had a kid with relentless execution."
+          bio="Throughout my career, I've had the pleasure of learning and applying the fundamentals of sales, marketing, product, and engineering with small to medium teams building companies that people want to work at and invest."
+          bioTwo="Previously managed software teams at Republic.com. Currently the Director of Engineering at Wondersciences, a psychedelics telemedicine company."
+          twitter="https://twitter.com/lazemore"
+          medium="https://medium.com/@lucasbazemore"
+        />
+      </div>
     </section>
   );
 }
