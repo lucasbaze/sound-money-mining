@@ -1,11 +1,11 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { allBlogs } from 'contentlayer/generated';
-import ViewCounter from './view-counter';
+import type { Metadata } from "next";
+import Link from "next/link";
+import { allBlogs } from "contentlayer/generated";
+import ViewCounter from "./view-counter";
 
 export const metadata: Metadata = {
-  title: 'Blog',
-  description: 'Read my thoughts on software development, design, and more.',
+  title: "Blog",
+  description: "Read my thoughts on software development, design, and more.",
 };
 
 export default async function BlogPage() {
@@ -27,7 +27,7 @@ export default async function BlogPage() {
           >
             <div className="w-full flex flex-col">
               <p>{post.title}</p>
-              <ViewCounter slug={post.slug} trackView={false} />
+              {/* <ViewCounter slug={post.slug} trackView={false} /> */}
             </div>
           </Link>
         ))}
