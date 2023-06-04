@@ -30,7 +30,7 @@ export default async function HomePage() {
             className="flex items-center hover:text-neutral-700 dark:hover:text-neutral-200 transition-all"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://leerob.substack.com"
+            href="https://soundmoneymining.substack.com"
           >
             <ArrowIcon />
             <p className="h-7">get email updates</p>
