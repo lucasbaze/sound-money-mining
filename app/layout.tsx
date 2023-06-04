@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: "Sound Money Mining",
     images: [
       {
-        url: "https://soundmoneymining/og.jpg",
+        url: "https://soundmoneymining.com/og.jpg",
         width: 1920,
         height: 1080,
       },
