@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { allBlogs } from "contentlayer/generated";
@@ -27,6 +28,14 @@ export default async function BlogPage() {
           >
             <div className="w-full flex flex-col">
               <p>{post.title}</p>
+              {post.image && (
+                <Image
+                  src={post.image}
+                  alt="image title"
+                  width={100}
+                  height={100}
+                />
+              )}
               {/* <ViewCounter slug={post.slug} trackView={false} /> */}
             </div>
           </Link>
