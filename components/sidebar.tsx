@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { LayoutGroup, motion } from "framer-motion";
 import whiteLogo from "../app/logo-white.svg";
+import darkLogo from "../app/logo-black.svg";
 
 const navItems = {
   "/": {
@@ -25,13 +26,16 @@ const navItems = {
 function Logo() {
   return (
     <Link aria-label="Sound Money Mining" href="/">
-      <Image
-        className="w-12"
-        alt="sound money mining logo"
-        src={whiteLogo}
-        width={100}
-        priority
-      />
+      <picture>
+        <source srcSet={darkLogo.src} media="(prefers-color-scheme: light)" />
+        <Image
+          className="w-12"
+          alt="sound money mining logo"
+          src={whiteLogo}
+          width={100}
+          priority
+        />
+      </picture>
     </Link>
   );
 }
