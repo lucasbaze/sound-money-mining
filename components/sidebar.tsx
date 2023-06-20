@@ -15,9 +15,6 @@ const navItems = {
   "/about": {
     name: "about",
   },
-  "/thesis": {
-    name: "thesis",
-  },
   "/blog": {
     name: "blog",
   },
