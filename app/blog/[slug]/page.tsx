@@ -25,6 +25,7 @@ export async function generateMetadata({
     publishedAt: publishedTime,
     summary: description,
     image,
+    author,
     slug,
   } = post;
   const ogImage = image
@@ -39,6 +40,7 @@ export async function generateMetadata({
       description,
       type: "article",
       publishedTime,
+      authors: [author],
       url: `https://soundmoneymining.com/blog/${slug}`,
       images: [
         {
@@ -69,7 +71,7 @@ export default async function Blog({ params }) {
       <script type="application/ld+json">
         {JSON.stringify(post.structuredData)}
       </script>
-      <h1 className="font-bold text-3xl font-serif max-w-[650px]">
+      <h1 className="font-bold text-3xl font-serif max-w-[650px] mb-4">
         <Balancer>{post.title}</Balancer>
       </h1>
       <div className="grid grid-cols-[auto_1fr_auto] items-center mt-4 mb-8 font-mono text-sm max-w-[650px]">
