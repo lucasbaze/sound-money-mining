@@ -86,29 +86,9 @@ const TeamMember = ({
 export default function AboutPage() {
   return (
     <section className="max-w-[512px]">
-      <h1 className="font-bold text-3xl font-serif">About</h1>
+      <h1 className="font-bold text-3xl font-serif">The Team</h1>
       <div className="prose prose-neutral dark:prose-invert text-neutral-800 dark:text-neutral-200">
-        <p>
-          Sound Money Mining is a Bitcoin mining venture. It was started in June
-          2023 to serve 2 major purposes:
-        </p>
-        <ul>
-          <li>
-            Create an entry point for long term investments into Bitcoin and
-            Bitcoin mining.
-          </li>
-          <li>
-            Increase the sum total knowledge, education, and information about
-            Bitcoin and the benefits of sound money for the world.
-          </li>
-        </ul>
-        <p>
-          As the next block time clock ticks ever forward, we will continue to
-          do our part to contribute to these above purposes now and into the
-          future.
-        </p>
-        <hr />
-        <h1 className="font-bold text-3xl font-serif">The Team</h1>
+        
         <p className="mb-12">
           With over 10 combined years of exposure, education, and involvement in
           the Bitcoin world, we are excited about Bitcoin and the future. If you
@@ -120,8 +100,8 @@ export default function AboutPage() {
           imageAlt="Roberto Lazer Eyes"
           name="Roberto Gargurevich"
           shortBio="First principles thinker and analytics junkie."
-          bio="I believe that understanding how a company's cross functional processes all come together is a key factor to successfully drawing insights from data and ultimately drive better business decisions. "
-          bioTwo="I've been with EXSIF Worldwide a Berkshire Hathaway company for over 6 years and I'm currently a Senior Analyst of Strategy and Business Intelligence."
+          bio="An industrial and systems engineer by trade, I discovered a profound passion for investing and economics. I thoroughly enjoy immersing myself in abstract and complex problems, relishing the opportunity to unravel their intricacies. Drawing upon my engineering background, I bring a strategic mindset to explore innovative solutions."
+          bioTwo="I have worked in globlal supply chain and fixed asset management for over 5 years. Currently the Senior Analyst of Strategy and Performance at EXSIF Worldwide, Inc, a Berkshire Hathaway Company."  
           twitter="https://twitter.com/gargu_R"
         />
         <TeamMember

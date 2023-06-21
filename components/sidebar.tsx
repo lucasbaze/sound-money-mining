@@ -10,16 +10,16 @@ import darkLogo from "../app/logo-black.svg";
 
 const navItems = {
   "/": {
-    name: "home",
+    name: "Home",
   },
   "/about": {
-    name: "about",
+    name: "About",
   },
   "/thesis": {
-    name: "thesis",
+    name: "Thesis",
   },
   "/blog": {
-    name: "blog",
+    name: "Blog",
   },
 };
 
