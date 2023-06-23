@@ -1,5 +1,5 @@
 import { ArrowIcon } from "components/icons";
-import { name, about, bio, avatar } from "lib/info";
+import { name, about, bio } from "lib/info";
 
 export const revalidate = 60;
 
