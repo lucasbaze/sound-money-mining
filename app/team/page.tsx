@@ -52,7 +52,7 @@ const TeamMember = ({
     </div>
     <p className="">{bio}</p>
     {bioTwo && <p className="mb-8">{bioTwo}</p>}
-    <div className="flex flex-col mb-12 gap-2 md:flex-row md:gap-2">
+    <div className="flex flex-col pb-24 gap-2 md:flex-row md:gap-2">
       <a
         rel="noopener noreferrer"
         target="_blank"
@@ -89,7 +89,7 @@ export default function AboutPage() {
       <h1 className="font-bold text-3xl font-serif">The Team</h1>
       <div className="prose prose-neutral dark:prose-invert text-neutral-800 dark:text-neutral-200">
         
-        <p className="mb-12">
+        <p className="pb-12">
           With over 10 combined years of exposure, education, and involvement in
           the Bitcoin world, we are excited about Bitcoin and the future. If you
           have any questions, do not hesitate to reach out to us!{" "}
