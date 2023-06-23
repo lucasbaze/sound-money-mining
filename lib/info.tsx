@@ -1,7 +1,5 @@
-import me from "../app/avatar.jpg";
 
 export const name = "Sound Money Mining";
-export const avatar = me;
 export const about = () => {
   return (
     <>
