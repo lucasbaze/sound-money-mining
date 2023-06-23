@@ -43,7 +43,7 @@ const computedFields = {
 
 export const Blog = defineDocumentType(() => ({
   name: "Blog",
-  filePathPattern: `**/*.post.mdx`,
+  filePathPattern: `content/**/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
