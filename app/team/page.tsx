@@ -96,7 +96,7 @@ export default function AboutPage() {
         </p>
         <TeamMember
           key="roberto"
-          image="/images/team/roberto-bw-sketch-twitter-lazer-eyes.jpeg"
+          image="/images/team/roberto-bw.png"
           imageAlt="Roberto Lazer Eyes"
           name="Roberto Gargurevich"
           shortBio="First principles thinker and analytics junkie."
@@ -106,7 +106,7 @@ export default function AboutPage() {
         />
         <TeamMember
           key="roberto"
-          image="/images/team/lucas-lazer-eyes.jpeg"
+          image="/images/team/lucas-bw.jpg"
           imageAlt="Lucas Lazer Eyes"
           name="Lucas Bazemore"
           shortBio="If ruthless prioritization had a kid with relentless execution."
