@@ -12,6 +12,9 @@ const navItems = {
   "/": {
     name: "Home",
   },
+	"/why": {
+		name: "Why"
+	},
   "/team": {
     name: "Team",
   },
