@@ -11,10 +11,10 @@ export default async function HomePage() {
 				</p>
         <p className="my-5">
 					<ol>
-						<li>Governments should serve the people, and not steal from them.</li>
 						<li>Scarce money incentivizes better decision making at every level of society.</li>
-						<li>Scarce money will make skills, labor, and materials plentiful.</li>
+						<li>Scarce money makes skills, labor, and materials plentiful.</li>
 						<li>Standarized money enables long term stability.</li>
+						<li>Limited governments serve the people, and do not steal from them.</li>
 						<li>Monetary and economic transparency increases fair trade and free markets.</li>
 						<li>Decentralization drives power and decision making to the local level where it works best.</li>
 						<li>War needs to bear its true cost and not as a medium to make money.</li>
