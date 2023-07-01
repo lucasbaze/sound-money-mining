@@ -4,10 +4,10 @@ export default async function HomePage() {
       <h1 className="font-bold text-3xl font-serif">Why</h1>
       <div className="prose prose-neutral dark:prose-invert text-neutral-800 dark:text-neutral-200">
         <p className="pb-5 my-10">
-					Thank you for coming to this page. I'm glad you're a curious one. 
+					Thank you for coming to this page. We're glad you're a curious one. 
 				</p>
         <p className="my-5">
-					This is a list of 10 reasons we believe Bitcoin will usher a new era: 
+					This is a list of 10 reasons we believe Bitcoin will usher in a new era: 
 				</p>
         <p className="my-5">
 					<ol>
