@@ -5,10 +5,7 @@ import { signIn, signOut } from 'next-auth/react';
 
 export function SignOut() {
   return (
-    <button
-      className="text-xs text-neutral-700 dark:text-neutral-300 mt-2 mb-6"
-      onClick={() => signOut()}
-    >
+    <button className="text-xs text-neutral-700 dark:text-neutral-300 mt-2 mb-6" onClick={() => signOut()}>
       → Sign out
     </button>
   );

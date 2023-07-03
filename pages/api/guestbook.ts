@@ -2,10 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { getSession } from 'next-auth/react';
 import { queryBuilder } from 'lib/planetscale';
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const session = await getSession({ req });
   if (!session || !session.user) {
     return res.status(403).send('Unauthorized');
@@ -28,11 +25,7 @@ export default async function handler(
   }
 
   if (req.method === 'DELETE') {
-    await queryBuilder
-      .deleteFrom('guestbook')
-      .where('id', '=', req.body.id)
-      .where('email', '=', email)
-      .execute();
+    await queryBuilder.deleteFrom('guestbook').where('id', '=', req.body.id).where('email', '=', email).execute();
 
     return res.status(204).json({});
   }

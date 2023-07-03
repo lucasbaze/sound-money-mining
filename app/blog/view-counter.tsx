@@ -8,21 +8,12 @@ type PostView = {
   count: string;
 };
 
-async function fetcher<JSON = any>(
-  input: RequestInfo,
-  init?: RequestInit
-): Promise<JSON> {
+async function fetcher<JSON = any>(input: RequestInfo, init?: RequestInit): Promise<JSON> {
   const res = await fetch(input, init);
   return res.json();
 }
 
-export default function ViewCounter({
-  slug,
-  trackView,
-}: {
-  slug: string;
-  trackView: boolean;
-}) {
+export default function ViewCounter({ slug, trackView }: { slug: string; trackView: boolean }) {
   const { data } = useSWR<PostView[]>('/api/views', fetcher);
   const viewsForSlug = data && data.find((view) => view.slug === slug);
   const views = new Number(viewsForSlug?.count || 0);

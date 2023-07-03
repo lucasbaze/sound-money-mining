@@ -1,12 +1,12 @@
-import Image from "next/image";
-import type { Metadata } from "next";
-import Link from "next/link";
-import { allBlogs } from "contentlayer/generated";
-import ViewCounter from "./view-counter";
+import Image from 'next/image';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { allBlogs } from 'contentlayer/generated';
+import ViewCounter from './view-counter';
 
 export const metadata: Metadata = {
-  title: "Blog",
-  description: "Read my thoughts on software development, design, and more.",
+  title: 'Blog',
+  description: 'Read my thoughts on software development, design, and more.',
 };
 
 export default async function BlogPage() {
@@ -21,21 +21,10 @@ export default async function BlogPage() {
           return 1;
         })
         .map((post) => (
-          <Link
-            key={post.slug}
-            className="flex flex-col space-y-1 mb-4"
-            href={`/blog/${post.slug}`}
-          >
+          <Link key={post.slug} className="flex flex-col space-y-1 mb-4" href={`/blog/${post.slug}`}>
             <div className="w-full flex flex-col">
               <p>{post.title}</p>
-              {post.image && (
-                <Image
-                  src={post.image}
-                  alt="image title"
-                  width={100}
-                  height={100}
-                />
-              )}
+              {post.image && <Image src={post.image} alt="image title" width={100} height={100} />}
               {/* <ViewCounter slug={post.slug} trackView={false} /> */}
             </div>
           </Link>

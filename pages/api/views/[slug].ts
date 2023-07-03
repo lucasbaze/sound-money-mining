@@ -1,21 +1,14 @@
 import { queryBuilder } from 'lib/planetscale';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     const slug = req.query?.slug as string;
     if (!slug) {
       return res.status(400).json({ message: 'Slug is required.' });
     }
 
-    const data = await queryBuilder
-      .selectFrom('views')
-      .where('slug', '=', slug)
-      .select(['count'])
-      .execute();
+    const data = await queryBuilder.selectFrom('views').where('slug', '=', slug).select(['count']).execute();
 
     const views = !data.length ? 0 : Number(data[0].count);
 

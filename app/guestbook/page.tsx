@@ -28,10 +28,7 @@ export default async function GuestbookPage() {
   let session;
 
   try {
-    const [guestbookRes, sessionRes] = await Promise.allSettled([
-      getGuestbook(),
-      getServerSession(authOptions),
-    ]);
+    const [guestbookRes, sessionRes] = await Promise.allSettled([getGuestbook(), getServerSession(authOptions)]);
 
     if (guestbookRes.status === 'fulfilled' && guestbookRes.value[0]) {
       entries = guestbookRes.value;
@@ -62,9 +59,7 @@ export default async function GuestbookPage() {
       {entries.map((entry) => (
         <div key={entry.id} className="flex flex-col space-y-1 mb-4">
           <div className="w-full text-sm break-words">
-            <span className="text-neutral-600 dark:text-neutral-400 mr-1">
-              {entry.created_by}:
-            </span>
+            <span className="text-neutral-600 dark:text-neutral-400 mr-1">{entry.created_by}:</span>
             {entry.body}
           </div>
         </div>

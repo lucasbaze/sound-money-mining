@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { Mdx } from "components/mdx";
-import { allBlogs } from "contentlayer/generated";
-import { getTweets } from "lib/twitter";
-import Balancer from "react-wrap-balancer";
-import ViewCounter from "../view-counter";
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { Mdx } from 'components/mdx';
+import { allBlogs } from 'contentlayer/generated';
+import { getTweets } from 'lib/twitter';
+import Balancer from 'react-wrap-balancer';
+import ViewCounter from '../view-counter';
 
 export async function generateStaticParams() {
   return allBlogs.map((post) => ({
@@ -12,25 +12,14 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params,
-}): Promise<Metadata | undefined> {
+export async function generateMetadata({ params }): Promise<Metadata | undefined> {
   const post = allBlogs.find((post) => post.slug === params.slug);
   if (!post) {
     return;
   }
 
-  const {
-    title,
-    publishedAt: publishedTime,
-    summary: description,
-    image,
-    author,
-    slug,
-  } = post;
-  const ogImage = image
-    ? `https://soundmoneymining.com${image}`
-    : `https://soundmoneymining.com/api/og?title=${title}`;
+  const { title, publishedAt: publishedTime, summary: description, image, author, slug } = post;
+  const ogImage = image ? `https://soundmoneymining.com${image}` : `https://soundmoneymining.com/api/og?title=${title}`;
 
   return {
     title,
@@ -38,7 +27,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      type: "article",
+      type: 'article',
       publishedTime,
       authors: [author],
       url: `https://soundmoneymining.com/blog/${slug}`,
@@ -49,7 +38,7 @@ export async function generateMetadata({
       ],
     },
     twitter: {
-      card: "summary_large_image",
+      card: 'summary_large_image',
       title,
       description,
       images: [ogImage],
@@ -68,9 +57,7 @@ export default async function Blog({ params }) {
 
   return (
     <section>
-      <script type="application/ld+json">
-        {JSON.stringify(post.structuredData)}
-      </script>
+      <script type="application/ld+json">{JSON.stringify(post.structuredData)}</script>
       <h1 className="font-bold text-3xl font-serif max-w-[650px] mb-4">
         <Balancer>{post.title}</Balancer>
       </h1>

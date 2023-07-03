@@ -11,23 +11,17 @@ export const getTweets = async (ids) => {
 
   const queryParams = new URLSearchParams({
     ids: ids.join(','),
-    expansions:
-      'author_id,attachments.media_keys,referenced_tweets.id,referenced_tweets.id.author_id',
-    'tweet.fields':
-      'attachments,author_id,public_metrics,created_at,id,in_reply_to_user_id,referenced_tweets,text',
+    expansions: 'author_id,attachments.media_keys,referenced_tweets.id,referenced_tweets.id.author_id',
+    'tweet.fields': 'attachments,author_id,public_metrics,created_at,id,in_reply_to_user_id,referenced_tweets,text',
     'user.fields': 'id,name,profile_image_url,protected,url,username,verified',
-    'media.fields':
-      'duration_ms,height,media_key,preview_image_url,type,url,width,public_metrics',
+    'media.fields': 'duration_ms,height,media_key,preview_image_url,type,url,width,public_metrics',
   });
 
-  const response = await fetch(
-    `https://api.twitter.com/2/tweets?${queryParams}`,
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.TWITTER_API_TOKEN}`,
-      },
-    }
-  );
+  const response = await fetch(`https://api.twitter.com/2/tweets?${queryParams}`, {
+    headers: {
+      Authorization: `Bearer ${process.env.TWITTER_API_TOKEN}`,
+    },
+  });
 
   const tweets = await response.json();
 
@@ -38,9 +32,7 @@ export const getTweets = async (ids) => {
   const getReferencedTweets = (mainTweet) => {
     return (
       mainTweet?.referenced_tweets?.map((referencedTweet) => {
-        const fullReferencedTweet = tweets.includes.tweets.find(
-          (tweet) => tweet.id === referencedTweet.id
-        );
+        const fullReferencedTweet = tweets.includes.tweets.find((tweet) => tweet.id === referencedTweet.id);
 
         return {
           type: referencedTweet.type,
@@ -56,9 +48,8 @@ export const getTweets = async (ids) => {
       const tweetWithAuthor = {
         ...tweet,
         media:
-          tweet?.attachments?.media_keys.map((key) =>
-            tweets.includes.media.find((media) => media.media_key === key)
-          ) || [],
+          tweet?.attachments?.media_keys.map((key) => tweets.includes.media.find((media) => media.media_key === key)) ||
+          [],
         referenced_tweets: getReferencedTweets(tweet),
         author: getAuthorInfo(tweet.author_id),
       };
@@ -69,14 +60,11 @@ export const getTweets = async (ids) => {
 };
 
 export const getTweetCount = async () => {
-  const response = await fetch(
-    `https://api.twitter.com/2/users/by/username/leeerob?user.fields=public_metrics`,
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.TWITTER_API_TOKEN}`,
-      },
-    }
-  );
+  const response = await fetch(`https://api.twitter.com/2/users/by/username/leeerob?user.fields=public_metrics`, {
+    headers: {
+      Authorization: `Bearer ${process.env.TWITTER_API_TOKEN}`,
+    },
+  });
 
   const { data } = await response.json();
   return Number(data.public_metrics.tweet_count);

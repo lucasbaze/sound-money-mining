@@ -34,15 +34,17 @@ const nextConfig = {
   },
 };
 
+
 // https://nextjs.org/docs/advanced-features/security-headers
+// https://developers.google.com/tag-platform/tag-manager/csp
 const ContentSecurityPolicy = `
     default-src 'self' vercel.live;
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.vercel-insights.com vercel.live;
-    style-src 'self' 'unsafe-inline';
-    img-src * blob: data:;
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.vercel-insights.com vercel.live https://*.googletagmanager.com https://tagmanager.google.com;
+    style-src 'self' 'unsafe-inline' https://tagmanager.google.com https://fonts.googleapis.com;
+    img-src * blob: data: https://ssl.gstatic.com https://www.gstatic.com https://*.google-analytics.com https://*.googletagmanager.com;
     media-src 'none';
-    connect-src *;
-    font-src 'self';
+    connect-src * https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com;
+    font-src 'self' https://fonts.gstatic.com data:;
 `;
 
 const securityHeaders = [
