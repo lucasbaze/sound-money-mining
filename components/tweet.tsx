@@ -7,15 +7,7 @@ import { format } from 'date-fns';
  * Needs support for images, GIFs, and replies maybe?
  * Styles use !important to override Tailwind .prose inside MDX.
  */
-export default function Tweet({
-  id,
-  text,
-  author,
-  media,
-  created_at,
-  public_metrics,
-  referenced_tweets,
-}) {
+export default function Tweet({ id, text, author, media, created_at, public_metrics, referenced_tweets }) {
   const authorUrl = `https://twitter.com/${author.username}`;
   const likeUrl = `https://twitter.com/intent/like?tweet_id=${id}`;
   const retweetUrl = `https://twitter.com/intent/retweet?tweet_id=${id}`;
@@ -23,21 +15,13 @@ export default function Tweet({
   const tweetUrl = `https://twitter.com/${author.username}/status/${id}`;
   const createdAt = new Date(created_at);
 
-  const formattedText = text
-    .replace(/https:\/\/[\n\S]+/g, '')
-    .replace('&amp;', '&');
-  const quoteTweet =
-    referenced_tweets && referenced_tweets.find((t) => t.type === 'quoted');
+  const formattedText = text.replace(/https:\/\/[\n\S]+/g, '').replace('&amp;', '&');
+  const quoteTweet = referenced_tweets && referenced_tweets.find((t) => t.type === 'quoted');
 
   return (
     <div className="tweet rounded-lg border border-neutral-200 dark:border-neutral-800 px-6 py-4 my-4 bg-white dark:bg-neutral-900 max-w-xl mx-auto">
       <div className="flex items-center">
-        <a
-          className="flex h-9 w-9"
-          href={authorUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a className="flex h-9 w-9" href={authorUrl} target="_blank" rel="noopener noreferrer">
           <Image
             alt={author.username}
             height={36}
@@ -70,25 +54,12 @@ export default function Tweet({
               </svg>
             ) : null}
           </span>
-          <span
-            className="text-sm !text-neutral-500 dark:!text-neutral-400 leading-4"
-            title={`@${author.username}`}
-          >
+          <span className="text-sm !text-neutral-500 dark:!text-neutral-400 leading-4" title={`@${author.username}`}>
             @{author.username}
           </span>
         </a>
-        <a
-          className="ml-auto"
-          href={authorUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg
-            viewBox="328 355 335 276"
-            height="18"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+        <a className="ml-auto" href={authorUrl} target="_blank" rel="noopener noreferrer">
+          <svg viewBox="328 355 335 276" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M 630, 425    A 195, 195 0 0 1 331, 600    A 142, 142 0 0 0 428, 570    A  70,  70 0 0 1 370, 523    A  70,  70 0 0 0 401, 521    A  70,  70 0 0 1 344, 455    A  70,  70 0 0 0 372, 460    A  70,  70 0 0 1 354, 370    A 195, 195 0 0 0 495, 442    A  67,  67 0 0 1 611, 380    A 117, 117 0 0 0 654, 363    A  65,  65 0 0 1 623, 401    A 117, 117 0 0 0 662, 390    A  65,  65 0 0 1 630, 425    Z"
               style={{ fill: '#3BA9EE' }}
@@ -108,14 +79,7 @@ export default function Tweet({
           }
         >
           {media.map((m) => (
-            <Image
-              key={m.media_key}
-              alt={text}
-              height={m.height}
-              width={m.width}
-              src={m.url}
-              className="rounded"
-            />
+            <Image key={m.media_key} alt={text} height={m.height} width={m.width} src={m.url} className="rounded" />
           ))}
         </div>
       ) : null}
@@ -126,10 +90,7 @@ export default function Tweet({
         target="_blank"
         rel="noopener noreferrer"
       >
-        <time
-          title={`Time Posted: ${createdAt.toUTCString()}`}
-          dateTime={createdAt.toISOString()}
-        >
+        <time title={`Time Posted: ${createdAt.toUTCString()}`} dateTime={createdAt.toISOString()}>
           {format(createdAt, 'h:mm a - MMM d, y')}
         </time>
       </a>

@@ -38,11 +38,7 @@ export default function Form() {
   }
 
   return (
-    <form
-      style={{ opacity: !isMutating ? 1 : 0.7 }}
-      className="relative max-w-[500px] text-sm"
-      onSubmit={onSubmit}
-    >
+    <form style={{ opacity: !isMutating ? 1 : 0.7 }} className="relative max-w-[500px] text-sm" onSubmit={onSubmit}>
       <input
         aria-label="Your message"
         placeholder="Your message..."

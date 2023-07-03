@@ -2,10 +2,10 @@ export default function robots() {
   return {
     rules: [
       {
-        userAgent: "*",
+        userAgent: '*',
       },
     ],
-    sitemap: "https://soundmoneymining.com/sitemap.xml",
-    host: "https://soundmoneymining.com",
+    sitemap: 'https://soundmoneymining.com/sitemap.xml',
+    host: 'https://soundmoneymining.com',
   };
 }

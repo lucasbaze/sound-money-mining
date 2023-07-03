@@ -1,4 +1,4 @@
-import { allBlogs } from "contentlayer/generated";
+import { allBlogs } from 'contentlayer/generated';
 
 export default async function sitemap() {
   const blogs = allBlogs.map((post) => ({
@@ -6,9 +6,9 @@ export default async function sitemap() {
     lastModified: post.publishedAt,
   }));
 
-  const routes = ["", "/about", "/blog", "/thesis"].map((route) => ({
+  const routes = ['', '/about', '/blog', '/thesis'].map((route) => ({
     url: `https://soundmoneymining.com${route}`,
-    lastModified: new Date().toISOString().split("T")[0],
+    lastModified: new Date().toISOString().split('T')[0],
   }));
 
   return [...routes, ...blogs];

@@ -1,25 +1,25 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import clsx from "clsx";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-import { LayoutGroup, motion } from "framer-motion";
-import whiteLogo from "../app/logo-white.svg";
-import darkLogo from "../app/logo-black.svg";
+import Image from 'next/image';
+import clsx from 'clsx';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+import { LayoutGroup, motion } from 'framer-motion';
+import whiteLogo from '../app/logo-white.svg';
+import darkLogo from '../app/logo-black.svg';
 
 const navItems = {
-  "/": {
-    name: "Home",
+  '/': {
+    name: 'Home',
   },
-	"/why": {
-		name: "Why"
-	},
-  "/team": {
-    name: "Team",
+  '/why': {
+    name: 'Why',
   },
-  "/blog": {
-    name: "Blog",
+  '/team': {
+    name: 'Team',
+  },
+  '/blog': {
+    name: 'Blog',
   },
 };
 
@@ -28,22 +28,16 @@ function Logo() {
     <Link aria-label="Sound Money Mining" href="/">
       <picture>
         <source srcSet={darkLogo.src} media="(prefers-color-scheme: light)" />
-        <Image
-          className="w-12"
-          alt="sound money mining logo"
-          src={whiteLogo}
-          width={100}
-          priority
-        />
+        <Image className="w-12" alt="sound money mining logo" src={whiteLogo} width={100} priority />
       </picture>
     </Link>
   );
 }
 
 export default function Navbar() {
-  let pathname = usePathname() || "/";
-  if (pathname.includes("/blog/")) {
-    pathname = "/blog";
+  let pathname = usePathname() || '/';
+  if (pathname.includes('/blog/')) {
+    pathname = '/blog';
   }
 
   return (
@@ -65,11 +59,11 @@ export default function Navbar() {
                     key={path}
                     href={path}
                     className={clsx(
-                      "transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle",
+                      'transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle',
                       {
-                        "text-neutral-500": !isActive,
-                        "font-bold": isActive,
-                      }
+                        'text-neutral-500': !isActive,
+                        'font-bold': isActive,
+                      },
                     )}
                   >
                     <span className="relative py-[5px] px-[10px]">
@@ -79,7 +73,7 @@ export default function Navbar() {
                           className="absolute inset-0 bg-neutral-100 dark:bg-neutral-800 rounded-md z-[-1]"
                           layoutId="sidebar"
                           transition={{
-                            type: "spring",
+                            type: 'spring',
                             stiffness: 350,
                             damping: 30,
                           }}
