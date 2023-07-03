@@ -78,9 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         </Suspense>
         <Sidebar />
-        <main className="flex-auto min-w-0 mt-6 md:mt-0 flex flex-col px-2 md:px-0">
-          {children}
-        </main>
+        <main className="flex-auto min-w-0 mt-6 md:mt-0 flex flex-col px-2 md:px-0">{children}</main>
       </body>
     </html>
   );

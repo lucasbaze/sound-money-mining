@@ -34,7 +34,6 @@ const nextConfig = {
   },
 };
 
-
 // https://nextjs.org/docs/advanced-features/security-headers
 // https://developers.google.com/tag-platform/tag-manager/csp
 const ContentSecurityPolicy = `

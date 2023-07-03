@@ -1,7 +1,7 @@
 import { IPublicConfig } from './lib/providers/config-provider';
 
 export const getPublicConfig = (): IPublicConfig => {
-  const requiredVars = [process.env.NEXT_PUBLIC_URL_ORIGIN];
+  const requiredVars = [process.env.NEXT_PUBLIC_VERCEL_URL];
 
   for (const varName of requiredVars) {
     if (varName === undefined) {
@@ -14,8 +14,8 @@ export const getPublicConfig = (): IPublicConfig => {
       nodeEnv: process.env.NODE_ENV || 'development',
     },
     app: {
-      urlOrigin: process.env.NEXT_PUBLIC_URL_ORIGIN!,
-      env: process.env.NEXT_PUBLIC_APP_ENV || 'development',
+      urlOrigin: process.env.NEXT_PUBLIC_VERCEL_URL!,
+      env: process.env.NEXT_PUBLIC_VERCEL_ENV || 'development',
     },
     google: {
       tagManagerId: process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID,

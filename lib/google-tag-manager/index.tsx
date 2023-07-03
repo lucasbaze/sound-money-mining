@@ -10,9 +10,9 @@ interface IGoogleTagManagerProps {
 function withGTMProps(Component: React.ComponentType<GtmScriptsProps>) {
   // eslint-disable-next-line react/display-name
   return ({ tagManagerId, nodeEnv, auth, preview }: IGoogleTagManagerProps) => {
-    // if (nodeEnv !== 'production' || !tagManagerId) {
-    //   return null;
-    // }
+    if (nodeEnv !== 'production' || !tagManagerId) {
+      return null;
+    }
 
     const previewEnv = auth && preview ? `&gtm_auth=${auth}&gtm_preview=${preview}&gtm_cookies_win=x` : ``;
 
@@ -26,7 +26,6 @@ interface GtmScriptsProps {
 }
 
 export const GtmNoScript = ({ tagManagerId, previewEnv }: GtmScriptsProps) => {
-  console.log('TagManagerID: ', tagManagerId, previewEnv);
   return (
     <noscript>
       <iframe
@@ -40,7 +39,6 @@ export const GtmNoScript = ({ tagManagerId, previewEnv }: GtmScriptsProps) => {
 };
 
 export const GtmScript = ({ tagManagerId, previewEnv }: GtmScriptsProps) => {
-  console.log('TagManagerID: ', tagManagerId, previewEnv);
   return (
     <Script id="google-tag-manager" strategy="afterInteractive">
       {`
