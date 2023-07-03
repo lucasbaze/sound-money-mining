@@ -57,7 +57,6 @@ export const metadata: Metadata = {
 };
 
 const publicConfig = getPublicConfig();
-console.log('PublicConfig: ', publicConfig);
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
