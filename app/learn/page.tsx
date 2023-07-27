@@ -83,7 +83,7 @@ export default function LearnPage() {
         frameBorder="0"
         width="100%"
         height="1000px"
-        style={{ background: 'transparent', border: 'none', borderRadius: '12px' }}
+        style={{ background: 'transparent', border: 'none', borderRadius: '24px', padding: '12px' }}
       />
     </section>
   );
