@@ -24,7 +24,7 @@ export default async function BlogPage() {
           <Link key={post.slug} className="flex flex-col space-y-1 mb-4" href={`/blog/${post.slug}`}>
             <div className="w-full flex flex-col">
               <p>{post.title}</p>
-              {post.image && <Image src={post.image} alt="image title" width={100} height={100} />}
+              {/* {post.image && <Image src={post.image} alt="image title" width={100} height={100} />} */}
               {/* <ViewCounter slug={post.slug} trackView={false} /> */}
             </div>
           </Link>
