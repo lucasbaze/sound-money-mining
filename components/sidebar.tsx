@@ -18,9 +18,6 @@ const navItems = {
   '/team': {
     name: 'Team',
   },
-  '/learn': {
-    name: 'Learn',
-  },
   '/blog': {
     name: 'Blog',
   },
@@ -31,7 +28,13 @@ function Logo() {
     <Link aria-label="Sound Money Mining" href="/">
       <picture>
         <source srcSet={darkLogo.src} media="(prefers-color-scheme: light)" />
-        <Image className="w-12" alt="sound money mining logo" src={whiteLogo} width={100} priority />
+        <Image
+          className="w-12"
+          alt="sound money mining logo"
+          src={whiteLogo}
+          width={100}
+          priority
+        />
       </picture>
     </Link>
   );

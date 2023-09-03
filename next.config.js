@@ -37,7 +37,7 @@ const nextConfig = {
 // https://nextjs.org/docs/advanced-features/security-headers
 // https://developers.google.com/tag-platform/tag-manager/csp
 const ContentSecurityPolicy = `
-    default-src 'self' vercel.live airtable.com youtube.com;
+    default-src 'self' vercel.live airtable.com;
     script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.vercel-insights.com vercel.live https://*.googletagmanager.com https://tagmanager.google.com airtable.com;
     style-src 'self' 'unsafe-inline' https://tagmanager.google.com https://fonts.googleapis.com airtable.com;
     img-src * blob: data: https://ssl.gstatic.com https://www.gstatic.com https://*.google-analytics.com https://*.googletagmanager.com;
