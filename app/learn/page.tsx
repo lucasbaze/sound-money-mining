@@ -64,7 +64,7 @@ export default function LearnPage() {
   const [section, setSection] = useState(sectionLinks['fiat-system']);
 
   return (
-    <section className="max-w-[640px]">
+    <section className="max-w-[650px]">
       <h1 className="font-bold text-3xl font-serif mb-8">Learn</h1>
       <div className="flex flex-wrap gap-2 mb-4">
         {Object.entries(sectionLinks).map((sectionLink) => {
@@ -83,7 +83,12 @@ export default function LearnPage() {
         frameBorder="0"
         width="100%"
         height="1000px"
-        style={{ background: 'transparent', border: 'none', borderRadius: '24px', padding: '12px' }}
+        style={{
+          background: 'transparent',
+          border: 'none',
+          borderRadius: '24px',
+          padding: '12px',
+        }}
       />
     </section>
   );

@@ -5,7 +5,7 @@ export const revalidate = 60;
 
 export default async function HomePage() {
   return (
-    <section className="max-w-[512px]">
+    <section className="max-w-[650px]">
       <h1 className="font-bold text-3xl font-serif">{name}</h1>
       <div className="prose prose-neutral dark:prose-invert text-neutral-800 dark:text-neutral-200">
         <p className="my-5">{about()}</p>
