@@ -66,8 +66,10 @@ export default async function Blog({ params }) {
           {post.publishedAt}
         </div>
         <div className="h-[0.2em] bg-neutral-50 dark:bg-neutral-800 mx-2" />
+        {post.author}
         {/* <ViewCounter slug={post.slug} trackView /> */}
       </div>
+      {post.image && post.imageAlt && <img src={post.image} alt={post.imageAlt} />}
       <Mdx code={post.body.code} tweets={tweets} />
     </section>
   );
