@@ -33,18 +33,20 @@ money ( as Bitcoin ) to anyone in the world without any permission from a bank,
 government, or legal entity. Nobody can stop you from making transactions and nobody can
 take your money from you ( when held properly, which we'll go over ).
 
-With the recent financial weaponization of banks and governments in Canada, the US, and
-even Paypal, unilaterally seizing people's funds or blocking them from transacting, the
-need for "self-custody" ( the action of taking ownership of your money ) has never been
-greater.
+With the recent financial weaponization of banks and
+[governments in Canada](https://www.cnn.com/2022/02/20/americas/canada-trucker-protest-covid-sunday/index.html),
+[the US](https://www.naturalnews.com/2021-06-19-another-america-first-patriot-is-de-banked.html),
+[the UK](https://www.youtube.com/watch?v=jIfBYTcoWok), and even globally with
+[Paypal](https://twitter.com/SpeechUnion/status/1679400272903434240), unilaterally seizing
+people's funds or blocking them from transacting, the need for "self-custody" ( the action
+of taking ownership of your money ) has never been greater.
 
-The great thing is that with only a few actions, you can take self-custody of your own
-money and remove all 3rd party risk from your money.
+The great thing is that with only a few actions, you can take self-custody and remove all
+3rd party risk from your money.
 
-I'm going to go over what I believe to be the fastest way to get up and running with
-Bitcoin and self-custody. This will not be heavy on technicalities, but instead will focus
-on the pragmatic aspects of getting setup, transacting, and long therm security of your
-money.
+Let's go over what I believe to be the fastest way to get up and running with Bitcoin and
+self-custody. This will not be heavy on technicalities, but instead will focus on the
+pragmatic aspects of getting setup, transacting, and long therm security of your money.
 
 If you have any questions, don't hesitate to text me at (713) 264-1320 or email me at
 lucas@soundmoneymining.com.
@@ -58,13 +60,14 @@ lucas@soundmoneymining.com.
 There are several types of "wallets" that exist out there, but the biggest distinction is
 between "hot" and "cold" wallets. All that "hot" vs. "cold" means is whether or not the
 wallet is directly connected to the internet. The implication is that "hot" wallets are
-connected to the internet, they pose greater risk of being hacked or stolen, whereas
-"cold" wallets are typically kept on a hardware device and the wallet exist offline, not
-connected to the internet, and thus reduces the chance of the being hacked or stolen.
+connected to the internet, therefore posing a greater risk of being hacked or stolen.
+"Cold" wallets are typically kept on a hardware device that exist offline, not connected
+to the internet, and therefore reduces the chance of the being hacked or stolen.
 
 With the right security measures in place, both can be incredibly secure; however, I
-recommend with a hot wallet, to only keep enough in the wallet that you'd use for day to
-day activies. I don't ever keep more than a few hundred dollars in my hot wallet.
+recommend starting with a hot wallet for simplicity and only keeping enough in the wallet
+that you'd use for day to day activies. I personally don't ever keep more than a few
+hundred dollars in my hot wallet.
 
 So let's get one!
 
@@ -74,22 +77,23 @@ There are several hot wallets that you can download on your phone, like
 [Muun wallet](https://muun.com/), [Wallet of Stoshi](https://www.walletofsatoshi.com/) or
 [Blue wallet](https://bluewallet.io/). The thing you're looking for is whether or not the
 wallet is "non-custodial", meaning that they don't hold onto the Bitcoin for you. For
-example an app like Strike, is great as an on / off ramp for buying Bitcoin, but they are
-custodial, meaning you don't own the Bitcoin. They do. We want to avoid that if we can,
-because taking custody is so simple, it's not worth the risk.
+example an app like [Strike](https://strike.me), is great as an on / off ramp for buying
+Bitcoin, but they are custodial, meaning you don't own the Bitcoin. They do.
 
-You can watch a video comparing the different hot wallets with lightning support here.
+We want to avoid that if we can, because taking custody is so simple, it's not worth the
+risk. You can watch a video comparing the different hot wallets that have Lightning
+support here. ( More on lightning in a second. )
 
 <ResponsiveIframe
   src="https://www.youtube.com/embed/MLeNxIrIrbU?si=hur327WWW6sO0BpT"
   title="YouTube video player"
 />
 
-Or you can simply take my recommendation:
+For simplicity, you can take my recommendation:
 
 <img src="/images/content/getting-started-with-bitcoin/muun.png" />
 
-I recommend using the <a target="_blank" href="https://muun.com/">Muun wallet</a> as it's
+I personally use the <a target="_blank" href="https://muun.com/">Muun wallet</a> as it's a
 2-2 multisig, shared-custodial, mobile, hot wallet that integrates seemlessly between
 Bitcoin and Lightning networks.
 
@@ -97,15 +101,15 @@ For the sake of using Bitcoin, you do not need to understand what each of those 
 means; however, I'll give a brief practical definition here:
 
 1. **2-2 Multisig:** This mean it takes 2 keys to send a transaction. ( This is handled
-   behind the scenes )
-2. **Shared-custodial:** It's not full self-custody, but Muun will hold 1 of the 2 keys
-   for you. ( Also behind the scenes )
+   behind the scenes and increases security. )
+2. **Shared-custodial:** It's not full self-custody, because Muun will hold 1 of the 2
+   keys for you. ( Also behind the scenes and increases ease of recovery )
 3. **Mobile:** Not desktop, which there are several like [Electrum](https://electrum.org/)
    or [Sparrow](https://sparrowwallet.com/).
 4. **Hot:**: We've gone over this one 👍
-5. **Lightning:** Lightning is a "Layer 2" technology that adheres to all the rules of
-   Bitcoin, but makes some trade offs to enable very low transaction fees. I use lightning
-   for all my day to day small payments.
+5. **Lightning:** Lightning is a "layer 2" technology that sits on top of and adheres to
+   all the rules of Bitcoin, but makes some small trade offs to enable very low
+   transaction fees. I use lightning for all my day to day small payments.
 
 As always, I strongly encourage you to do your own research to understand what all is
 going on.
@@ -134,6 +138,8 @@ one:
 With anything Bitcoin related, it's crucial to only use tools and platforms that are
 transparent and reliable. For example, this means only using open-source wallets.
 Open-source means that the software's source code is available for anyone to review.
+
+You can see [Muun's open-source code on Github](https://github.com/muun).
 
 This transparency allows for a community of developers to inspect, modify, and enhance the
 software, ensuring its security and functionality. Moreover, ensuring that a wallet is
@@ -203,7 +209,7 @@ both agree on), and they can send Bitcoin directly to your wallet.
 i.e. a friend owes you money cash from a dinner, drinks, or event, request the money back
 in Bitcoin!
 
-### Buy some from an exchange
+### Buy some from an exchange and withdraw it
 
 Exchanges are platforms where you can buy or sell Bitcoin.
 
@@ -240,17 +246,16 @@ from Coinbase, and you can see that the fee is only $0.25 for $100 or 0.25%. Pre
   alt="Limit Order Setup"
 />
 
+Lastly, you must widthdraw the funds from Coinbase to your wallet. Coinbase will only let
+you send to a Bitcoin address, and not a Lightning address; however Muun makes this very
+simple to understand.
+
+![Coinbase Withdrawal](/images/content/getting-started-with-bitcoin/coinbase-withdraw.png)
+
 If you don't want to use Coinbase, that's okay too. Any of the other exchanges will do the
 trick, **so long as the exchange let's you withdraw your Bitcoin.** There are several
 places that tout selling you Bitcoin, but don't have any mechanisms to take custody of
 your Bitcoin. You want to avoid that!
-
-**Note:** When you buy from an exchange, you must identify yourself before you can
-withdrawal your Bitcoin, meaning that when you withdrawal, there is a small chance that
-your individual bitcoin addresses will be identifable in the future. While this isn't a
-long term issue, it's good to understand that if someone wanted to know which addresses
-you own, you would be a greater risk of being forced to identify your Bitcoin addresses,
-and they could be monitored for future use.
 
 **If you're outside the United States:**
 
@@ -258,6 +263,13 @@ and they could be monitored for future use.
 
 [Binance](https://www.binance.com/en) is one of the world's largest exchanges and is a
 popular choice for many international users.
+
+**Note:** When you buy from an exchange, you must identify yourself before you can
+withdrawal your Bitcoin, meaning that when you withdrawal, there is a small chance that
+your individual bitcoin addresses will be identifable in the future. While this isn't a
+long term issue, it's good to understand that if someone wanted to know which addresses
+you own, you would be a greater risk of being forced to identify your Bitcoin addresses,
+and they could be monitored for future use.
 
 ### Bitcoin Transactions Notes
 
@@ -321,15 +333,15 @@ user-friendly and the security is some of the best in the business.
 
 ### Cold Card
 
-Coldcard has some of the best security and its advanced features, and it's a favorite
+Coldcard has probably the best security and tons of advanced features, and it's a favorite
 among tech-savvy Bitcoin enthusiasts.
 
 <img src="/images/content/getting-started-with-bitcoin/coldcard.png" />
 
-Both are excellent choices, but the best one for you depends on your preferences and
-needs. When evaluating Bitcoin wallets, I recommend that you ensure any wallet you use is
-open-source, reproducible, and has a Bitcoin only version of the wallet. This will ensure
-maximum security of your wallet.
+Both are excellent choices, but the best one for you depends on how nerdy you want to get.
+When evaluating hardware wallets, just like hot wallets, I recommend that you ensure any
+wallet you use is open-source, reproducible, and has a Bitcoin only version of the wallet.
+This will ensure maximum security of your wallet.
 
 ## Consider recurring Bitcoin purchases
 
