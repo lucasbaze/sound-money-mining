@@ -12,16 +12,11 @@ author: 'Lucas Bazemore'
 # TL;DR
 
 0. Understand that you should self-custody your Bitcoin.
-1. Download the [Muun mobile wallet](https://muun.com/).
-2. Back up the wallet following Muun's backup steps. Be very careful with your backup!
+1. Download the [Phoenix mobile wallet](https://phoenix.acinq.co/).
+2. Back up the wallet following Phoenix's backup steps. Be very careful with your backup!
 3. Get yourself some Bitcoin by trading, buying it or texting me.
 
 # Overview
-
-<ResponsiveIframe
-  src="https://player.vimeo.com/video/860719504?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-  title="Fastest Way to Get Started with Bitcoin"
-/>
 
 Getting started with Bitcoin is simple, quick, and incredibly powerful!
 
@@ -74,11 +69,13 @@ So let's get one!
 ### Download a hot wallet.
 
 There are several hot wallets that you can download on your phone, like
-[Muun wallet](https://muun.com/), [Wallet of Stoshi](https://www.walletofsatoshi.com/) or
+[Phoenix Wallet](https://phoenix.acinq.co/), [Muun wallet](https://muun.com/),
+[Wallet of Stoshi](https://www.walletofsatoshi.com/) or
 [Blue wallet](https://bluewallet.io/). The thing you're looking for is whether or not the
 wallet is "non-custodial", meaning that they don't hold onto the Bitcoin for you. For
-example an app like [Strike](https://strike.me), is great as an on / off ramp for buying
-Bitcoin, but they are custodial, meaning you don't own the Bitcoin. They do.
+example an app like [Strike](https://strike.me) is great as an on / off ramp for buying
+Bitcoin, but they are custodial, meaning at the end of the day you don't own the Bitcoin.
+They do.
 
 We want to avoid that if we can, because taking custody is so simple, it's not worth the
 risk. You can watch a video comparing the different hot wallets that have Lightning
@@ -91,32 +88,31 @@ support here. ( More on lightning in a second. )
 
 For simplicity, you can take my recommendation:
 
-<img src="/images/content/getting-started-with-bitcoin/muun.png" />
+<img src="/images/content/getting-started-with-bitcoin/phoenix-mac.png" />
 
-I personally use the <a target="_blank" href="https://muun.com/">Muun wallet</a> as it's a
-2-2 multisig, shared-custodial, mobile, hot wallet that integrates seemlessly between
+I personally use the <a target="_blank" href="https://phoenix.acinq.co/">Phoenix
+wallet</a> as it's a non-custodian mobile, hot wallet that integrates seemlessly between
 Bitcoin and Lightning networks.
 
 For the sake of using Bitcoin, you do not need to understand what each of those items
 means; however, I'll give a brief practical definition here:
 
-1. **2-2 Multisig:** This mean it takes 2 keys to send a transaction. ( This is handled
-   behind the scenes and increases security. )
-2. **Shared-custodial:** It's not full self-custody, because Muun will hold 1 of the 2
-   keys for you. ( Also behind the scenes and increases ease of recovery )
-3. **Mobile:** Not desktop, which there are several like [Electrum](https://electrum.org/)
+1. **Non Custodial:** This means that you are responsible for your monetary security.
+   There's no insurance if you lose your seed phase, but it also means nobody can take
+   away your Bitcoin.
+2. **Mobile:** Not desktop, which there are several like [Electrum](https://electrum.org/)
    or [Sparrow](https://sparrowwallet.com/).
-4. **Hot:**: We've gone over this one 👍
-5. **Lightning:** Lightning is a "layer 2" technology that sits on top of and adheres to
+3. **Hot:** We've gone over this one 👍
+4. **Lightning:** Lightning is a "layer 2" technology that sits on top of and adheres to
    all the rules of Bitcoin, but makes some small trade offs to enable very low
    transaction fees. I use lightning for all my day to day small payments.
 
 As always, I strongly encourage you to do your own research to understand what all is
 going on.
 
-<img src="/images/content/getting-started-with-bitcoin/muun-mac.png" />
+<img src="/images/content/getting-started-with-bitcoin/phoenix-iphone.png" />
 
-After you download Muun, you simply click "Create New Wallet" and voila! You've got a
+After you download Phoenix, you simply click "Create New Wallet" and voila! You've got a
 Bitcoin wallet! You can now send and receive Bitcoin from anyone in the world! It's that
 simple!
 
@@ -125,13 +121,18 @@ identifiable information. With Bitcoin, you don't need to disclose your personal
 to anyone in order to send money. You simply literally cannot do this with the traditional
 financial system.
 
-If you want extra help setting up your Muun wallet, you can watch a tutorial like this
+If you want extra help setting up your Phoenix wallet, you can watch a tutorial like this
 one:
 
 <ResponsiveIframe
-  src="https://www.youtube.com/embed/uOl3_vjZKOA?si=ygks7iqnUMttX0l4"
+  src="https://www.youtube.com/embed/nxcEAPoFGWk?si=tAWhcyRTI2tIXggN"
   title="YouTube video player"
 />
+
+One additional note is that for the very first transaction you conduct on Phoenix, there
+is a 10,000 sat fee which is native to the Lightning network to open up the channels that
+allow for payments to be made on the network. This is not a fee from Phoenix, but part of
+the underlying technology that ensures the security of the network.
 
 ### Wallet notes
 
@@ -139,7 +140,7 @@ With anything Bitcoin related, it's crucial to only use tools and platforms that
 transparent and reliable. For example, this means only using open-source wallets.
 Open-source means that the software's source code is available for anyone to review.
 
-You can see [Muun's open-source code on Github](https://github.com/muun).
+You can see [Phoenix's open-source code on Github](https://github.com/ACINQ/phoenix).
 
 This transparency allows for a community of developers to inspect, modify, and enhance the
 software, ensuring its security and functionality. Moreover, ensuring that a wallet is
@@ -162,9 +163,8 @@ call if things go wrong. Your backup is your lifeline.
 for you money, and in return, you reduce the risk of having your money seized and your
 money becoming devalued / debased.
 
-If you're using the Muun wallet, as recommended earlier, they offer a simple backup
-process. Make sure you follow it meticulously. Note that Muun wallet has a unique backup
-process separate from the traditional process you might read about online.
+If you're using the Phoenix wallet, as recommended earlier, they offer a simple backup
+process and record your seed phase is a secure place.
 
 You always want to make sure you that you keep any backup information ( private keys,
 secret keys, seed phrase, backup phrase, etc... ) private and offline.
@@ -247,8 +247,8 @@ from Coinbase, and you can see that the fee is only $0.25 for $100 or 0.25%. Pre
 />
 
 Lastly, you must widthdraw the funds from Coinbase to your wallet. Coinbase will only let
-you send to a Bitcoin address, and not a Lightning address; however Muun makes this very
-simple to understand.
+you send to a Bitcoin address, and not a Lightning address; however Phoenix makes this
+very simple to understand.
 
 ![Coinbase Withdrawal](/images/content/getting-started-with-bitcoin/coinbase-withdraw.png)
 
@@ -283,8 +283,8 @@ secure.
 **Use Lightning for small payments**
 
 The Lightning network will make transaction fees much smaller and is equally as simple to
-use. If you're using the Muun wallet, and you want to receive some Bitocin, make sure you
-select the "Lightning" option at the top.
+use. If you're using the Phoenix wallet, and you want to receive some Bitocin, make sure
+you select the "Lightning" option which will generate a different QR code.
 
 <img
   src="/images/content/getting-started-with-bitcoin/lightning-address.png"
@@ -300,9 +300,9 @@ below.
 ## Congratulations! You're ready to go!
 
 If you've setup your wallet, backed it up, and recieved some Bitcoin, you've achieved
-something remarkable! With simply a hot wallet, like Muun, you have everything you need to
-send and receive Bitcion! With the backup you have the means to recover your money if you
-ever lose your phone. It's that easy.
+something remarkable! With simply a hot wallet, like Phoenix, you have everything you need
+to send and receive Bitcion! With the backup you have the means to recover your money if
+you ever lose your phone. It's that easy.
 
 Additionally, you have:
 
