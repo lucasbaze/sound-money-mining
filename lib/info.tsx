@@ -27,8 +27,8 @@ export const bio = () => {
           transition
         </li>
         <li>
-          2. Empower you with knowledge so you can rest easy when Wall Street peddles
-          panic for profit
+          Empower you with knowledge so you can rest easy when Wall Street peddles panic
+          for profit
         </li>
       </ol>
       Our approach is driven by who we are. We obsess over economic analysis. We are

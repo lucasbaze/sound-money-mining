@@ -41,7 +41,7 @@ export default async function HomePage() {
         </p>
         <p className="my-5">
           Ultimately, we want prosperity and longevity for all and Bitcoin helps get us
-          their.
+          there.
         </p>
       </div>
     </section>
